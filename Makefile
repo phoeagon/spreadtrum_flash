@@ -1,9 +1,12 @@
-
 LIBUSB = 1
+APPNAME = spd_dump
+
 CFLAGS = -O2 -Wall -Wextra -std=c99 -pedantic -Wno-unused
 CFLAGS += -DUSE_LIBUSB=$(LIBUSB)
-LIBS = -lm -lpthread
-APPNAME = spd_dump
+CFLAGS += -I$(shell brew --prefix libusb)/include
+
+LDFLAGS += -L$(shell brew --prefix libusb)/lib
+LIBS = -lm
 
 ifeq ($(LIBUSB), 1)
 LIBS += -lusb-1.0
@@ -20,4 +23,4 @@ GITVER.h:
 	echo "#define GIT_SHA1 \"$(shell git rev-parse HEAD)\"" >> GITVER.h
 
 $(APPNAME): $(APPNAME).c common.c
-	$(CC) -s $(CFLAGS) -o $@ $^ $(LIBS)
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
