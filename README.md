@@ -208,6 +208,13 @@ Then the prompt should display `FDL2>`.
 
   FDL2 and new FDL1
 
+### macOS (Homebrew)
+
+```sh
+brew tap phoeagon/spreadtrum_flash https://github.com/phoeagon/spreadtrum_flash
+brew install spreadtrum_flash
+```
+
 ### Android(Termux)
 
 1. Install [Termux-api](https://github.com/termux/termux-api/releases) and authorize self startup

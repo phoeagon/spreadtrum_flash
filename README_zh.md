@@ -210,6 +210,13 @@ spd_dump --wait 300 fdl /path/to/fdl1 fdl1_addr fdl /path/to/fdl2 fdl2_addr exec
 
   FDL2和新版FDL1
 
+### macOS (Homebrew)
+
+```sh
+brew tap phoeagon/spreadtrum_flash https://github.com/phoeagon/spreadtrum_flash
+brew install spreadtrum_flash
+```
+
 ### Android(Termux)
 
 1. 安装[Termux-api](https://github.com/termux/termux-api/releases)并授权自启动
